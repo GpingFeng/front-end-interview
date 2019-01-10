@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>函数节流和函数防抖</title>
+    <style>
+        #container {
+            width: 100%;
+            height: 50000px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <button id="btn">我是一个按钮</button>我是内容</div>
+    <script>
+        // 参考 https://www.jianshu.com/p/f9f6b637fd6c
+        // 函数节流
+        // 限制事件在一定时间内只能执行一次
+        const _throttle = function (func, wait) {
+            console.log('222');
+            let timer;
+            return () => {
+                if (timer) {
+                    return
+                }
+                timer = setTimeout(() => {
+                    func();
+                    timer = null;
+                }, wait)
+            }
+        }
+        let container = document.getElementById('container');
+        window.onscroll = _throttle(print, 1000);
+        // window.addEventListener('scroll', function() {
+        //     console.log('333');
+        // });
+
+        // 函数防抖 debounce 指触发事件后 n 秒内只能执行一次，如果在 n 秒内重新触发，则会
+        // 重新计算函数执行时间
+        let btn = document.getElementById('btn');
+        
+        const _debounce = function (func, wait) {
+            let timer;
+            return () => {
+                clearTimeout(timer);
+                timer = setTimeout(func, wait);
+            }
+        }
+        btn.onclick = _debounce(print, 1000);
+        function print() {
+            console.log('点击');
+        }
+    </script>
+</body>
+</html>
