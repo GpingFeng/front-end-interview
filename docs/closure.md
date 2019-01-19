@@ -10,7 +10,7 @@
 
 ## 举个例子
 
-```
+```js
 let Quo = function(status) {
     return {
         get_status: function() {
