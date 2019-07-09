@@ -8,6 +8,7 @@
 - JavaScript
   - [闭包](closure)
   - [继承](inherit)
+  - [函数节流和防抖](throttle)
 
 - 前端框架
 

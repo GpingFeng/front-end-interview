@@ -34,7 +34,7 @@
             }
         }
         let container = document.getElementById('container');
-        window.onscroll = _throttle(print, 1000);
+        // window.onscroll = _throttle(print, 1000);
         // window.addEventListener('scroll', function() {
         //     console.log('333');
         // });
@@ -50,10 +50,47 @@
                 timer = setTimeout(func, wait);
             }
         }
-        btn.onclick = _debounce(print, 1000);
+        // btn.onclick = _debounce(print, 1000);
         function print() {
             console.log('触发事件');
         }
+
+        
+        // 初步实现
+        const throttle = function (fn, time) {
+          let canRun = true
+          return () => {
+            if (canRun) {
+              canRun = false
+              setTimeout(() => {
+                canRun = true
+                fn()
+              }, time)
+            }
+          }
+        }
+
+        function sayThrottle() {
+          console.log('我是节流，我在固定的时间内执行一次')
+        }
+        window.onscroll = throttle(sayThrottle, 1000)
+
+        function debounce (fn, time) {
+          let timer = null
+          return () => {
+            // 每次都会重新开始计算时间
+            clearTimeout(timer)
+            timer = setTimeout(() => {
+              fn()
+            }, time)
+          }
+        }
+
+        function sayDebounce() {
+          console.log('我是防抖，每次触发我都会重新计算一次时间')
+        }
+        
+        btn.onclick = debounce(sayDebounce, 1000);
     </script>
 </body>
 </html>
