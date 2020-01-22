@@ -77,17 +77,20 @@
 
         function debounce (fn, time) {
           let timer = null
-          return () => {
+          return function () {
             // 每次都会重新开始计算时间
             clearTimeout(timer)
             timer = setTimeout(() => {
-              fn()
+              console.log('arguments:', arguments)
+              fn.apply(this, arguments)
             }, time)
           }
         }
 
-        function sayDebounce() {
+        function sayDebounce(value) {
+          console.log('11111', this)
           console.log('我是防抖，每次触发我都会重新计算一次时间')
+          console.log(value)
         }
         
         btn.onclick = debounce(sayDebounce, 1000);
