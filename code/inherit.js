@@ -1,3 +1,7 @@
+/**
+ * 继承的实现
+ * 组合继承和寄生组合继承
+ */
 function Parent (value) {
     this.val = value
 }

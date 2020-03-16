@@ -1,4 +1,7 @@
-Function.prototype.myApply = function(context) {
+/**
+ * 手动实现 bind
+ */
+Function.prototype.myBind = function(context) {
     // 这个时候this的指向就是一个函数
     if (typeof this !== 'function') {
         throw new Error('error')

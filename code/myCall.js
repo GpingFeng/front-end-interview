@@ -1,3 +1,6 @@
+/**
+ * 手动实现 call
+ */
 Function.prototype.myCall = function(context) {
     // 这个时候this的指向就是一个函数
     if (typeof this !== 'function') {

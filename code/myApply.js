@@ -1,3 +1,6 @@
+/**
+ * 手动实现 apply
+ */
 Function.prototype.myApply = function(context) {
     // 这个时候this的指向就是一个函数
     if (typeof this !== 'function') {
@@ -7,7 +10,7 @@ Function.prototype.myApply = function(context) {
     context = context || window
     // 指定一个 fn 属性，指向当前函数
     context.fn = this
-    let result 
+    let result
     // 处理参数，假如有传入参数，传入的是一个数组
     if (arguments[1]) {
         result = context.fn(arguments[1])

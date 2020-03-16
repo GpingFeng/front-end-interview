@@ -1,3 +1,6 @@
+/**
+ * 一个简单的闭包的例子
+ */
 let quo = function(status) {
     let statusSecond = 200;
     return {

@@ -23,6 +23,17 @@ function create (ctr) {
 }
 
 
+function createNew(Con, ...args) {
+    // 创建一个新对象
+    let obj = {}
+    // 将这个对象的原型指向这个构造函数的原型对象
+    obj.__proto__ == Con.prototype
+    // 将构造函数中的 this 指向到这个对象，并传递参数
+    let result = Con.apply(obj, args)
+    return result instanceof Object ? result : obj
+}
+
+
 
 /**
  * @description 验证信息

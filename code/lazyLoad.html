@@ -1,3 +1,4 @@
+<!-- 图片懒加载基本实现 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,7 +47,6 @@
                     if(item.dataset.original === "")
                     return
                     rect = item.getBoundingClientRect()// 用于获得页面中某个元素的左，上，右和下分别相对浏览器视窗的位置
-                    console.log(rect);
                     if(rect.bottom >= 0 && rect.top < viewHeight) {
                         !function() {
                             var img = new Image()

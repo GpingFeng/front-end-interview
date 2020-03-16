@@ -21,7 +21,6 @@
         // 函数节流
         // 限制事件在一定时间内只能执行一次
         const _throttle = function (func, wait) {
-            console.log('222');
             let timer;
             return () => {
                 if (timer) {
@@ -81,16 +80,13 @@
             // 每次都会重新开始计算时间
             clearTimeout(timer)
             timer = setTimeout(() => {
-              console.log('arguments:', arguments)
               fn.apply(this, arguments)
             }, time)
           }
         }
 
         function sayDebounce(value) {
-          console.log('11111', this)
           console.log('我是防抖，每次触发我都会重新计算一次时间')
-          console.log(value)
         }
         
         btn.onclick = debounce(sayDebounce, 1000);

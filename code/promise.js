@@ -1,3 +1,6 @@
+/**
+ * 实现小型 Promise
+ */
 const PEDDING = 'pedding'
 const RESOLVED = 'resolved'
 const REJECTED = 'rejected'

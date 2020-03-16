@@ -1,4 +1,6 @@
-// instanceof 的原理实现
+/* 
+* instanceof 的原理实现
+*/
 function newInstanceof (leftValue, rightValue) {
     // 取右表达式的 prototype
     let rightProto = rightValue.prototype;  

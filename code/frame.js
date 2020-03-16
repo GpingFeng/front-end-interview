@@ -1,3 +1,6 @@
+/**
+ * 监听页面是否卡顿
+ */
 var lastTime = performance.now()
 var frame = 0
 var timer = 0

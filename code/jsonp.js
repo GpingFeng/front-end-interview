@@ -1,3 +1,6 @@
+/**
+ * JSONP 的简单实现
+ */
 function myJsonp(url, jsonpCallback, success) {
     let script = document.createElement('script')
     script.url = url

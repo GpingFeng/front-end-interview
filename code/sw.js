@@ -1,3 +1,6 @@
+/**
+ * server Worker 的简单实现
+ */
 // index.js
 if (navigator.serviceWorker) {
   navigator.serviceWorker
