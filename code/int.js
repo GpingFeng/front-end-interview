@@ -1,3 +1,6 @@
+/**
+ * Bigo 二面面试题
+ */
 function one (arr) {
   let result = 0
   for(let i = 0; i < arr.length; i++) {

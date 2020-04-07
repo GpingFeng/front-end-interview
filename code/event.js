@@ -17,7 +17,7 @@ class Event {
         if(item) {
             for(let i=0;i<item.length;i++) {
                 if(item[i] == cb) {
-                    item.splice(i,1);
+                    item.splice(i, 1);
                     break;
                 }
             }

@@ -10,22 +10,28 @@ function sum (x) {
   }
 }
 
+console.log(sum(2, 3)); // Outputs 5
+console.log(sum(2)(3)); // Outputs 5
+
 function curry (fn, currArgs) {
-  return function() {
-      let args = [].slice.call(arguments);
+  return function(...args) {
+      // let args = [].slice.call(arguments);
       console.log('arg:', args)
       console.log('currArgs:', currArgs)
 
       // 首次调用时，若未提供最后一个参数currArgs，则不用进行args的拼接
+      // 重点是要拼接所有的参数
       if (currArgs !== undefined) {
           args = args.concat(currArgs);
       }
 
       // 递归调用，fn.length 指的是最初函数有多少个参数
       if (args.length < fn.length) {
+          // 递归思想
           return curry(fn, args);
       }
 
+      console.log('Lastarg:', args)
       // 递归出口
       return fn.apply(null, args);
   }
@@ -42,5 +48,11 @@ multi(2)(3)(4)
 // multi(2)(3, 4)
 // multi(2, 3)(4)
 
-console.log(sum(2, 3)); // Outputs 5
-console.log(sum(2)(3)); // Outputs 5
+
+// 简洁版
+// currySimple(1,2,3) === currySimple(1)(2)(3)
+function currySimple (fn, arr = []) {
+  return fn.length === arr.length ? fn.apply(null, arr) : function (...args) {
+    return curry(fn, arr.concat(args))
+  }
+}

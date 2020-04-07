@@ -74,22 +74,25 @@
         }
         window.onscroll = throttle(sayThrottle, 1000)
 
-        function debounce (fn, time) {
+        function debounce (fn, time, ...args) {
           let timer = null
           return function () {
             // 每次都会重新开始计算时间
             clearTimeout(timer)
             timer = setTimeout(() => {
-              fn.apply(this, arguments)
+              // console.log('参数：', arguments[0])
+              // fn.apply(this, args)
+              fn(...args)
+              // fn()
             }, time)
           }
         }
 
         function sayDebounce(value) {
-          console.log('我是防抖，每次触发我都会重新计算一次时间')
+          console.log('我是防抖，每次触发我都会重新计算一次时间' + value)
         }
         
-        btn.onclick = debounce(sayDebounce, 1000);
+        btn.onclick = debounce(sayDebounce, 1000, 111);
     </script>
 </body>
 </html>

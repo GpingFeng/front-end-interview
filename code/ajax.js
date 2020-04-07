@@ -21,7 +21,7 @@ function ajax(url, fnSucc, fnFaild) {
       }
     }
   };
-  // 第二步：初始化XMLHttpRequest方法
+  // 第二步：初始化XMLHttpRequest方法，第三个参数是否异步【默认为 true】
   xhttp.open("GET", url);
   // 第三步：XMLHttpRequest向服务器发送请求
   xhttp.send();
@@ -52,6 +52,7 @@ let ajax = obj => {
       xhr.open("POST", obj.url, true);
       xhr.responseType = "json";
       xhr.setRequestHeader("Accept", "application/json");
+      // 如果是 POST 的话，就将参数放入到这里
       xhr.send(obj.data);
     } else {
       let query = "";
@@ -63,6 +64,7 @@ let ajax = obj => {
           encodeURIComponent(obj.data[key]);
       }
       query.substring(1);
+      // 如果是 Get 方法，则将参数放在链接中
       xhr.open("GET", obj.url + "?" + query, true);
       xhr.send();
     }

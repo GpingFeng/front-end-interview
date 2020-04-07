@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>proxy</title>
+  </head>
+  <body>
+    <h1>使用Proxy 和 Reflect 实现双向数据绑定</h1>
+    <input type="text" id="input" />
+    <h2>您输入的内容是： <i id="txt"></i></h2>
+    <script>
+      //获取dom元素
+      let oInput = document.getElementById("input")
+      let oTxt = document.getElementById("txt")
+
+      let data = new Proxy(
+        {},
+        {
+          set: (target, key, value) => {
+            oTxt.innerHTML = value
+            oInput.value = value
+            let val = Reflect.set(target, key, value)
+            return val
+          }
+        }
+      );
+
+      oInput.addEventListener("keyup", el => {
+        data.text = el.target.value;
+      });
+      oTxt.addEventListener("keyup", el => {
+        data.text = el.target.innerHTML;
+      });
+    </script>
+  </body>
+</html>

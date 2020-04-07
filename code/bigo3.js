@@ -7,7 +7,7 @@
 2. 数组某个下标对应的数字。
 3. 往数组里push元素。
 
-一个边界场景：
+边界场景1：
 [1,1,1,2]   [1,1,2]
  */
 
@@ -31,6 +31,7 @@
     } else if (tempResult.length !== 0) {
       result.push(tempResult[0])
       j = 0;
+      // 重置 i 的值，兼容边界场景边界场景1：
       i = i - tempResult.length + 1
       tempResult = []
     } else {

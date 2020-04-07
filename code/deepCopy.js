@@ -30,9 +30,13 @@ let newObj = deepClone(obj);
 newObj.b.c = 1;
 console.log(obj.b.c); // 2
 
+let newObj1 = clone(obj);
+newObj1.b.c = 1;
+console.log(obj.b.c); // 2
+
 // todo: 实现一个深度克隆方法。需要支持 对象、数组、数字、字符串、布尔值  null
 function clone(data) {
-  let result = {};
+  // let result = {};
   function isObject(data) {
     if (
       (typeof data === "object" || typeof data === "function") &&
@@ -44,9 +48,11 @@ function clone(data) {
     }
   }
 
-  if (Array.isArray(data)) {
-    result = [...data];
-  }
+  // if (Array.isArray(data)) {
+  //   result = [...data];
+  // }
+  let isArray = Array.isArray(obj);
+  let result = isArray ? [...obj] : { ...obj };
 
   for (let key in data) {
     if (data.hasOwnProperty(key)) {
