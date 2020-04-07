@@ -11,7 +11,7 @@
 
 typeScript
 
-#### html
+## html
 
 1\. 有哪些常用的<meta>标签
 
@@ -43,10 +43,11 @@ content="width=device-width,initial-scale=1.0,maxmum-scale=1.0,minimum-scale=1.0
 
 ```
 
-#### CSS
+## CSS
 
 1\. 有哪些居中的方法
 
+```
 line-height=height
  
 justify-content: center  // 水平居中
@@ -60,16 +61,15 @@ margin负值
 
 水平居中 margin:0 auto;
 
-
 display: table;
 vertical-align: middle;
-
+```
 2\. 响应式布局有哪些方法，详细说说rem布局法
 
 3\. 有没有使用过css的扩展语法，比如less，sass
 
-1.嵌套
-2.变量
+  - 嵌套
+  - 变量
 
 
 4\. BFC（ 块级格式上下文）
@@ -143,9 +143,10 @@ box-sizing： content-box 标准盒模型
 9.伪类和伪元素的区别
 
 伪类：
-1.格式化DOM树以外的信息。比如： <a> 标签的:link、:visited 等。这些信息不存在于DOM树中。
 
-2.不能被常规CSS选择器获取到的信息。比如：要获取第一个子元素，我们无法用常规的CSS选择器获取，但可以通过 :first-child 来获取到。
+- 格式化DOM树以外的信息。比如： \<a> 标签的:link、:visited 等。这些信息不存在于DOM树中。
+
+- 不能被常规CSS选择器获取到的信息。比如：要获取第一个子元素，我们无法用常规的CSS选择器获取，但可以通过 :first-child 来获取到。
 
 
 伪类其实是弥补了CSS选择器的不足，用来更方便地获取信息。
@@ -168,7 +169,7 @@ box-sizing： content-box 标准盒模型
 
 12\. 如何实现即时通讯 websocket
 
-#### JS
+## JS
 
 1\. dom事件流
 
@@ -214,9 +215,9 @@ box-sizing： content-box 标准盒模型
 
 * 意外的全局变量
 
-//一个未申明的变量会在全局对象中创建一个新的变量。即window对象下。（windows对象是一直存在的，不会被销毁，除非页面卸载）
+一个未申明的变量会在全局对象中创建一个新的变量。即window对象下。（windows对象是一直存在的，不会被销毁，除非页面卸载）
 
-//指向window对象的this下绑定的变量
+指向window对象的this下绑定的变量
 
 -----解决：use strict. 使用严格模式，能避免创建意外的全局变量。
 
@@ -265,7 +266,7 @@ header 和 body 分开发送是部分浏览器或框架的请求方法，不属�
 
 （1）创建ajax对象
 
-```
+```js
 
 var xhr = null;
 
@@ -283,7 +284,7 @@ if(window.XMLHttpRequest){
 
 (2)连接服务器
 
-```
+```js
 
 xhr.open('GET'，url,true)
 
@@ -291,15 +292,13 @@ xhr.open('GET'，url,true)
 
 (3)向服务器发送请求
 
-```
-
+```js
 xhr.send();
-
 ```
 
 (4)接收服务器的返回
 
-```
+```js
 
 xhr.onReadyStatechange = function(){}
 
@@ -328,7 +327,7 @@ readyState 属性
 ```
 
 
-```
+```js
 function ajax(url, fnSucc, fnFaild) {
   var xhttp;
  
@@ -381,11 +380,11 @@ content-type是指http/https发送信息至服务器的内容编码类型。服�
 
 14\. 正则
 
-#### es6++++
+## es6
 
 1\. es6中新增的数据类型symbol,set,map
 
-#### 综合
+## 综合
 
 1\. pc端与h5的区别
 
@@ -402,7 +401,7 @@ content-type是指http/https发送信息至服务器的内容编码类型。服�
 [https://75.team/post/first-impression-of-w3c.html](https://75.team/post/first-impression-of-w3c.html)
 
 
-#### 框架
+## 框架
 
 1\. vue中不同组件中如何通信
 
@@ -414,7 +413,7 @@ content-type是指http/https发送信息至服务器的内容编码类型。服�
 
 5\. vue中key有什么用
 
-#### 小程序
+## 小程序
 
 1\. 小程序生命周期  [https://www.cnblogs.com/lilicat/p/10456481.html](https://www.cnblogs.com/lilicat/p/10456481.html)
 
@@ -437,9 +436,8 @@ content-type是指http/https发送信息至服务器的内容编码类型。服�
 - 【moved】 组件实例被移动到树的另一个位置
 - 【detached】 组件实例从节点树中移
 
-#### 打包工具
+## 打包工具
 
-10\. webpack
 
 webpack与gulp的区别
 
@@ -453,56 +451,48 @@ webpack的构建流程
 
 如何配置webpack多页面应用
 
-#### 算法
+## 算法
 
 1\. 快速排序
 
-#### 网络
+## 网络
 
 
 
-#### git
+## git
 
 1\. 版本回退
 
-#### 安全问题
+## 安全问题
 
 1\. xss，csrf
 
-#### 最后 
+## 最后 
 
 1\. 在上个公司的收获，评价下上个公司
 
-- 挺好的。团队氛围融洽。也能学到挺多东西
 
 
 2\. 你的优缺点
 
-优点：
-- 自律。坚持做一件事情
-
-缺点：
-- 急躁【项目进度比项目经理还急】
-- 正直
 
 3\. 你的爱好
-- 健身
-- 骑行
+
 
 4\. 职业规划
-- 高级工程师【全栈】
-- 一个小 Team
 
-5\. 有没有女朋友 
 
-6\. 你有什么想问的吗
+5\.  你有什么想问的吗
 
 ## 其他
 - link 和 @import
 1.link除了加载 CSS 还有其他功能
+
 2.@import 是在页面加载完之后加载，页面闪烁
 加载页面时，link标签引入的 CSS 被同时加载；@import引入的 CSS 将在页面加载完毕后被加载。
+
 3.兼容性 link 比 @import 好
+
 4.DOM可控性区别
 可以通过 JS 操作 DOM ，插入link标签来改变样式；由于DOM方法是基于文档的，无法使用@import的方式插入样式。
 

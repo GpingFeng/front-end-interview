@@ -1,105 +1,11 @@
 
-### 流程
-1. 自我介绍
-2. 为什么想跳槽，你对新公司的期待是什么，为什么选择我们公司
-
-一般会在 HR 面中提到这个问题，主要是看你个人对该公司的态度【体现出个人的忠诚度】
-
-- 个人成长层面。在团队中能够发挥自己的价值，为团队和公司带来成就的同时，能够在贵公司获得技术和业务上的成长
-
-项目考察
-
-3. 挑一个最拿手的项目讲一下
-4. 根据项目提问
-5. 再提问其他项目
-6. 项目情况。说说当时的情况。
-- 项目背景（应该每个项目都要准备一两个难点，而且自己还要非常的熟悉）自己不是很清楚的技术栈不要写【React 和 flutter】
-
-小程序的难点
-- iphoneX 的适配
-- [https://kangzubin.com/wxapp-iphonex/](https://kangzubin.com/wxapp-iphonex/)
-
-wx.getSystemInfo(OBJECT) 
-
-返回的手机型号字段 model 是否包含 iPhone X 字符串来判断设备是否为 iPhone X
-
-globalData  ——  isIPX
-
-吸底按钮适配
-margin-bottom
-
-- setTimeout 休眠问题
-- 重新梳理微信小程序的登录流程和退货流程
-退货流程
-  [http://wiki.corp.vipshop.com/pages/viewpage.action?pageId=795414085](http://wiki.corp.vipshop.com/pages/viewpage.action?pageId=795414085)
-登录总结
-[http://wiki.corp.vipshop.com/pages/viewpage.action?pageId=788206963](http://wiki.corp.vipshop.com/pages/viewpage.action?pageId=788206963)
-
-![](https://upload-images.jianshu.io/upload_images/1784460-90f9b080a9ab5711.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-
-
-- 微信小程序常考知识点（比如生命周期梳理）
-
-rpx 和 rem 
-1rpx = 0.5px
-
-问题描述：
-小程序使用的是rpx，H5页面使用的是px，需要统一使用单位。需要工具进行转换。
-
-解决方法：
-使用 `px2rem-loader` 解决
-
-相对于根元素的字体大小的单位
-默认根节点的是16px
-记住一个转换0.625 转换成10px
-rem能等比例适配所有屏幕
-
-这里可以谈到响应式的回答
-1  简单一点的页面，一般高度直接设置成固定值，宽度一般撑满整个屏幕。
-2  稍复杂一些的是利用百分比设置元素的大小来进行适配，或者利用 flex 等 css 去设置一些需要定制的宽度。
-3  再复杂一些的响应式页面，需要利用 css3 的 media query 属性来进行适配，大致思路是根据屏幕不同大小，来设置对应的 css 样式。
-最后就是我们的rem了，不同机器设置的根 HTML 的 font-size 值也不一样的
-一般有两种方式
-
-- 利用 css 的 media query 来设置即
-```
-@media (min-device-width : 375px) and (max-device-width : 667px) and (-webkit-min-device-pixel-ratio : 2){
-      html{font-size: 37.5px;}
-}
-```
-
-- 利用 javascript 来动态设置 根据我们之前算出的基准值，我们可以利用 js 动态算出当前屏幕所适配的 font-size 即：
-
-```
-document.getElementsByTagName('html')[0].style.fontSize = window.innerWidth / 10 + 'px';
-```
-
-[http://www.alloyteam.com/2016/03/mobile-web-adaptation-tool-rem/](http://www.alloyteam.com/2016/03/mobile-web-adaptation-tool-rem/)
-
-
-px
-em 问题。相对于父元素的字体大小单位
-
-mpvue 是什么？
-
-
-
-mpvue 有什么用？
-
-mpvue 原理？
-
-- 通过 mpvue 提供 mp 的 runtime 适配小程序（虚拟DOM层去做适配）
-- 通过 mpvue-loader 产出微信小程序所需要的文件结构和模块内容。（AST树上去转换文件结构）
-
-///// js技能提问
+## js技能提问
 1. 闭包的理解
-【回答了基本概念】
+
 该函数可以访问它被创建时候所处的上下文环境《JavaScript 语言精粹》
 闭包是指有权访问另一个函数作用域中的变量的函数 ---- 《JavaScript 高级程序设计》
 
 2. 原型链的理解
-【基本回答】
 
 从构造函数、原型对象、实例、Object、null 的角度出发去讲
 
@@ -108,17 +14,17 @@ mpvue 原理？
 
 
 3. 数据类型判断有哪几种方式
-【基本回答】
+
 typeof 的优缺点
 instanceof 的优缺点
 引出判断数组
 
 4. js中的事件队列（js,promise,settimeout）
-【基本回答】
+
 Js 是单线程说起、说执行栈、谈到微任务和宏任务。最后讲它们的执行顺序
 
 5. 深克隆和浅克隆
-【基本回答】
+
 先解释两个概念的区别，在实际项目中的运用。
 
 浅复制：Object.assign、展开运算符 ...、slice 和 concat 方法。浅拷贝只解决了一层的问题
@@ -136,7 +42,7 @@ JSON.parse(JSON.stringify(object)) 的缺点
 
 
 7. es6使用情况
-【基本回答】
+
  箭头函数的this指向哪里
 定义箭头函数时候的 this 指向
 
@@ -148,14 +54,6 @@ JSON.parse(JSON.stringify(object)) 的缺点
  async/await相比promise的优势
 
 另外提一下 setTimeout 和 setInterval，毕竟两个也算是异步的一种实现方案！
-
-
- es6模块与commonjs模块有什么区别
-
-- CommonJS支持动态导入。也就是 require(${path}/xx.js)
-- CommonJS是同步导入（用于服务端，文件在本地，同步导入即使卡住主线程影响也不大），ES module 是异步导入的（运用于浏览器，需要下载文件）???
-- CommonJS在导出的时候是值拷贝。而 ES module 采用的是实时绑定的方式，导入导出都指向了同一个内存地址
-- ES Module 会编译成 require/exports 来执行的？？？ESmodule 是编译时候输出接口，CommonJS 模块是运行时加载
 
 8. 从输入网址到显示的过程，从计算机网络和浏览器渲染方面讲一下？
 
@@ -178,7 +76,15 @@ JSON.parse(JSON.stringify(object)) 的缺点
 	CSSOM 树和 DOM 树构建完成后会开始生成 Render 树，这一步就是确定页面元素的布局、样式等等诸多方面的东西
 	在生成 Render 树的过程中，浏览器就开始调用 GPU 绘制，合成图层，将内容显示在屏幕上了
 
-//// 性能优化
+9.es6模块与commonjs模块有什么区别
+
+- CommonJS支持动态导入。也就是 require(${path}/xx.js)
+- CommonJS是同步导入（用于服务端，文件在本地，同步导入即使卡住主线程影响也不大），ES module 是异步导入的（运用于浏览器，需要下载文件）???
+- CommonJS在导出的时候是值拷贝。而 ES module 采用的是实时绑定的方式，导入导出都指向了同一个内存地址
+- ES Module 会编译成 require/exports 来执行的？？？ESmodule 是编译时候输出接口，CommonJS 模块是运行时加载
+
+
+## 性能优化
 
 这个问题很大，我觉得需要分点去回答，先从一些常用的技术手段去回答，然后说说我们团队做了哪些优化
 
@@ -284,7 +190,7 @@ JSON.parse(JSON.stringify(object)) 的缺点
 	CDN
 
 
-//// 浏览器
+## 浏览器
 1. 浏览器的同源策略
 【概念回答】
 2. 如何实现跨域
@@ -352,8 +258,9 @@ mc.addEventListener('message', event => {
 	6.CSS 选择符从右往左匹配查找，避免节点层级过多
 
 
-//// 框架
+## 框架
 1. vue,react中不同组件中如何通信
+
 （1）vue    
 父子组件用Props通信
 非父子组件用Event Bus通信
@@ -371,6 +278,7 @@ v-model 的语法糖
 使用语法糖 v-model，因为 v-model 会被解析成名为 value 的 prop 和名为 input 的事件
 
 (2)react
+
 父子组件,父->子直接用Props,子->父用callback回调
 非父子组件,用发布订阅模式的Event模块
 项目复杂的话用Redux、Mobx等全局状态管理管库
@@ -486,11 +394,7 @@ Electron是由Github开发，用HTML，CSS和JavaScript来构建跨平台桌面�
 Node.js中常用的Path、fs等模块可以直接在Electron中使用
 
 
-
-~~13. flutter：移动ui框架~~'
-~~Dart 开发~~
-
-//// 小程序
+## 小程序
 1. 生命周期
 
 整个小程序：
@@ -535,8 +439,9 @@ setTimeout的休眠，也就是上面提到的内存泄漏
 
 
 
-//// 打包工具
-10. webpack
+## 打包工具
+1. webpack
+
 webpack与gulp的区别
 
 [https://www.cnblogs.com/lovesong/p/6413546.html](https://www.cnblogs.com/lovesong/p/6413546.html)
@@ -553,13 +458,13 @@ entry
 output
 引用关系，处理一个个模块
 
-如何用webpack来优化前端性能(减少 Webpack 打包后的文件体积)
+2.如何用webpack来优化前端性能(减少 Webpack 打包后的文件体积)
 
 	按需加载
 	Scope Hoisting
 	Tree Shaking
 
-如何提高webpack的打包速度
+3.如何提高webpack的打包速度
 
 	优化Loader
 		优化 Loader 的查找路径
@@ -572,7 +477,7 @@ output
 	代码压缩
 		UglifyJS
 
-如何配置webpack多页面应用
+4.如何配置webpack多页面应用
 我觉得主要是 entry 入门多配置即可
 ```
 entry: {
@@ -581,19 +486,17 @@ entry: {
 }
 ```
 
-//// 算法
-18. 快速排序
+## 算法
+1. 快速排序
 
-//// 网络
-11. http协议，tcp/ip
-
-http和http2有什么区别，http2相比http有什么优点
+## 网络
+1. http和http2有什么区别，http2相比http有什么优点
 - 多路复用
 - 二进制传输
 - Hpack 打包请求头
 - 服务端推送
 
-http与https有什么区别，详细说一下httpS是如何保证安全通信的
+2.http与https有什么区别，详细说一下httpS是如何保证安全通信的
 
 HTTPS 也是通过 HTTP 协议进行传输信息，但是采用了 TLS 协议进行了加密
 
@@ -614,7 +517,7 @@ HTTPS 也是通过 HTTP 协议进行传输信息，但是采用了 TLS 协议进
 		然后客户端创建一个【秘钥】，并使用公钥加密，发送给服务端
 		服务端接收到密文以后通过【私钥】解密出正确的【秘钥】
 
-TLS 握手过程
+3. TLS 握手过程
 
 	客户端发送一个【随机值】以及需要的协议和加密方式。
 	服务端收到客户端的随机值，自己也产生一个随机值，并根据客户端需求的【协议和加密方式】来使用对应的方式，并且发送自己的【证书】（如果需要验证客户端证书需要说明）
@@ -622,7 +525,7 @@ TLS 握手过程
 	服务端收到加密过的随机值并使用【私钥】解密获得【第三个随机值】，这时候两端都拥有了三个随机值，可以通过这三个随机值按照之前约定的加密方式生成【密钥】，接下来的通信就可以通过该密钥来加密解密
 	采用的是非对称加密的方式
 
-http缓存
+4. http缓存
     强缓存：
 expires,cache-control
 expires 是本地时间，可能有误
@@ -635,8 +538,8 @@ last-modified/if-modified-since
 etag/if-none-match
 
 
-//// 安全问题
-19. 对前端安全方面有了解吗，解释下xss，csrf。还有别的安全问题吗（iframe的滥用，恶意的第三方库）
+## 安全问题
+1. 对前端安全方面有了解吗，解释下xss，csrf。还有别的安全问题吗（iframe的滥用，恶意的第三方库）
 XSS ——跨站脚本攻击（Cross Site Scripting）
 注入恶意指定代码脚本【一般指的就是 JavaScript】。比如评论
 
@@ -645,7 +548,7 @@ csrf
 
 
 
-20. 如何预防xss和csrf
+2. 如何预防xss和csrf
 
 XSS
 
@@ -667,7 +570,7 @@ csrf
 			服务器下发一个随机 Token，每次发起请求时将 Token 携带上，服务器验证 Token 是否有效。
 
 
-//// git使用
+## git使用
 1. 版本回退
 
 git reset HEAD^
@@ -691,8 +594,32 @@ git reset --soft commit_id
 
 
 
-其他
-1.面向对象和面向过程有什么区别？
+
+
+
+## HR
+1. 在上个公司的收获，评价下上个公司
+
+2. 你的优缺点
+
+3. 职业规划 
+
+4. 你有什么想问的吗
+
+5. 自我介绍
+
+6. 为什么想跳槽，你对新公司的期待是什么，为什么选择我们公司
+
+一般会在 HR 面中提到这个问题，主要是看你个人对该公司的态度【体现出个人的忠诚度】
+
+## 项目考察
+
+1. 挑一个最拿手的项目讲一下
+
+
+## 零散知识点
+
+- 面向对象和面向过程有什么区别？
 
 由原型链引入： 有没有用js写过面向对象的代码
 
@@ -712,25 +639,67 @@ Person.prototype.eat = function () {}
 
 [https://zhuanlan.zhihu.com/p/28427324](https://zhuanlan.zhihu.com/p/28427324)
 
+- [iphoneX 的适配](https://kangzubin.com/wxapp-iphonex/)
 
-//// 结束 
-1. 在上个公司的收获，评价下上个公司
-- 收获技术上的成长，还有业务上的成就（注重新人培养）
-- 团队成员相处融洽，扩广人脉
+wx.getSystemInfo(OBJECT)，返回的手机型号字段 model 是否包含 iPhone X 字符串来判断设备是否为 iPhone X
 
-2. 你的优缺点
-优点：
-- 自律、能够坚持去做事情
-- 独立思考
-- 团队协作
-- 跟一件事，有始有终
+globalData  ——  isIPX
 
-缺点：
-- 性情直爽、爱憎分明
-- 我需要学会更耐心一点。我的性子比较急，我总要我的工作赶在第一时间完成。我不能容忍工作怠慢
-3. 职业规划 
-- 三年内达到高级前端工程师的级别
-- 能够带领一个 team 做出一定的贡献
-4. 你有什么想问的吗
-- 加入贵司之后前三个月，你希望我做到什么样的程度
-- 加入贵司，主要负责的业务是什么？ 
+吸底按钮适配，margin-bottom
+
+- setTimeout 休眠问题
+- 重新梳理微信小程序的登录流程和退货流程
+![](https://upload-images.jianshu.io/upload_images/1784460-90f9b080a9ab5711.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+- 微信小程序常考知识点（比如生命周期梳理）
+
+- 关于 rpx 和 rem 等单位问题
+rpx 和 rem 
+1rpx = 0.5px。px
+em 问题。相对于父元素的字体大小单位
+
+遇到的问题描述：
+小程序使用的是rpx，H5页面使用的是px，需要统一使用单位。需要工具进行转换。
+
+解决方法：
+使用 `px2rem-loader` 解决
+
+相对于根元素的字体大小的单位
+默认根节点的是 16px 
+记住一个转换 0.625 转换成 10px 
+rem 能等比例适配所有屏幕
+
+这里可以谈到响应式的回答
+
+1  简单一点的页面，一般高度直接设置成固定值，宽度一般撑满整个屏幕。
+
+2  稍复杂一些的是利用百分比设置元素的大小来进行适配，或者利用 flex 等 css 去设置一些需要定制的宽度。
+
+3  再复杂一些的响应式页面，需要利用 css3 的 media query 属性来进行适配，大致思路是根据屏幕不同大小，来设置对应的 css 样式。
+最后就是我们的rem了，不同机器设置的根 HTML 的 font-size 值也不一样的
+一般有两种方式
+
+- 利用 css 的 media query 来设置即
+```
+@media (min-device-width : 375px) and (max-device-width : 667px) and (-webkit-min-device-pixel-ratio : 2){
+      html{font-size: 37.5px;}
+}
+```
+
+- 利用 javascript 来动态设置 根据我们之前算出的基准值，我们可以利用 js 动态算出当前屏幕所适配的 font-size 即：
+
+```
+document.getElementsByTagName('html')[0].style.fontSize = window.innerWidth / 10 + 'px';
+```
+
+参考：[http://www.alloyteam.com/2016/03/mobile-web-adaptation-tool-rem/](http://www.alloyteam.com/2016/03/mobile-web-adaptation-tool-rem/)
+
+
+- 关于 mpvue 知识
+mpvue 是什么？
+
+mpvue 有什么用？
+
+mpvue 原理？
+
+- 通过 mpvue 提供 mp 的 runtime 适配小程序（虚拟DOM层去做适配）
+- 通过 mpvue-loader 产出微信小程序所需要的文件结构和模块内容。（AST树上去转换文件结构）

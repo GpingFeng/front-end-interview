@@ -4,15 +4,14 @@
 - null 和 undefined 的区别【重要回顾】
   - null 类型代表着空值，代表着一个空指针对象，typeof null 会是得到 'object' 所以可以认为它是一个特殊的对象值。undefined 当你声明一个变量未初始化的时候，得到的就是 undefined
    - typeof 的值不一样
-  ```
+  ```js
   console.log(typeof undefined); //undefined
   console.log(typeof null); //object
   ```
   - 转为数值时，值不一样
-  ```
+  ```js
   console.log(Number(undefined)); //NaN
   console.log(undefined + 10);//NaN
-
   console.log(Number(null)); //0
   console.log(null + 10); //10
   ```
@@ -127,7 +126,7 @@ FastClick的实现原理是在检测到touchend事件的时候，会通过DOM自
 
 // [https://www.jianshu.com/p/9f2f72c5f272](https://www.jianshu.com/p/9f2f72c5f272)
 
-```
+
 
 参考：[https://www.jianshu.com/p/b5c103a9bed0](https://www.jianshu.com/p/b5c103a9bed0)
 

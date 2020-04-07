@@ -2,6 +2,7 @@
 
 - Vue 的生命周期？
 - webpack 的工作流程？
+
 答：
   - 首先，构建就是做这件事情，把源代码转换成发布到线上的可执行 JavaScrip、CSS、HTML 代码。
   - 基础：webpack 就是一切皆为模块
@@ -19,6 +20,7 @@
 
 
 - CSS 的优先级？
+
 !important>行内样式>ID>类选择器 = 属性选择器 = 伪类选择器[:after]>标签选择器 = 伪元素选择器[::before]
 
 - float有哪些值？清除浮动？
@@ -31,15 +33,26 @@ none, left, right。float会使元素脱离原文档流，从而破坏原来的�
 - Sass/Less？【重点回顾】
   - Less、Sass/Scss是什么？Less 是一种动态样式语言. 对CSS赋予了动态语言的特性，如变量、继承、运算、函数。Sass  是一种动态样式语言，Sass语法属于缩排语法，比 css 比多出好些功能(如变量、嵌套、运算,混入(Mixin)、继承、颜色处理，函数等)，更容易阅读。
   - less和sass的相同之处
+  
 1、混入(Mixins)——class中的class；
+
 2、参数混入——可以传递参数的class，就像函数一样；
+
 3、嵌套规则——Class中嵌套class，从而减少重复的代码；
+
 4、运算——CSS中用上数学；
+
 5、颜色功能——可以编辑颜色；
+
 6、名字空间(namespace)——分组样式，从而可以被调用；
+
 7、作用域——局部修改样式；
-8、JavaScript 赋值——在CSS中使用JavaScript表达式赋值
+
+8、JavaScript 赋值——在CSS中使用
+JavaScript表达式赋值
+
   - less和sass的区别
+
     Less和Sass的主要不同就是他们的实现方式。
     Less是基于JavaScript，是在客户端处理的。
     Sass是基于Ruby的，是在服务器端处理的。
@@ -51,7 +64,7 @@ none, left, right。float会使元素脱离原文档流，从而破坏原来的�
 - cookie、localStorage 和 sessionStorage
 - 两列布局
   - 方法一：双inline-block
-```
+```css
 #wrap{
   width: 100%;
   font-size: 0;
@@ -73,7 +86,7 @@ none, left, right。float会使元素脱离原文档流，从而破坏原来的�
 如果两边高度不一样，需要加vertical-align: top
   - 方法二：双float
 
-```
+```css
 #left{
   float: left;
   width: 200px;
@@ -92,7 +105,7 @@ none, left, right。float会使元素脱离原文档流，从而破坏原来的�
 父元素需要清除浮动
 
 方法三： float+margin-left
-```
+```css
 #left{
   float: left;
   width: 200px;
@@ -106,7 +119,7 @@ none, left, right。float会使元素脱离原文档流，从而破坏原来的�
 缺点：需要清除浮动,需要计算margin-left
 
 方法四：absolute+margin-left
-```
+```css
 #left{
   position: absolute;
   width: 200px;
@@ -120,7 +133,7 @@ none, left, right。float会使元素脱离原文档流，从而破坏原来的�
 缺点：使用了绝对定位，若是用在某个div中，需要更改父容器的position。
 
 方法五：float+BFC
-```
+```css
 #wrap{
   overflow:hidden;
 }
@@ -139,7 +152,7 @@ none, left, right。float会使元素脱离原文档流，从而破坏原来的�
 缺点：父元素需要清除浮动。
 
 方法六：flex布局
-```
+```css
 #wrap{
   display: flex;
 }
@@ -162,7 +175,7 @@ none, left, right。float会使元素脱离原文档流，从而破坏原来的�
 
     - 仅需将容器设置为display:flex;，盒内元素两端对其，将中间元素设置为100%宽度即可填充空白，再利用margin值设置边距即可
     - 并且盒内元素的高度撑开容器的高度
-```
+```css
 <div class="wrap">
     <div class="left">左侧</div>
     <div class="middle">中间</div>
@@ -178,7 +191,7 @@ none, left, right。float会使元素脱离原文档流，从而破坏原来的�
 </style>
 ```
    - float和BFC配合圣杯布局
-```
+```css
 <div class="wrap">
     <div class="middle">
         <div class="main">中间</div>
@@ -238,13 +251,13 @@ onContextMenu IE5|N|O 当浏览者按下鼠标右键出现菜单时或者通过�
 - 性能优化有哪些？
 - 字符串中查找出数字？【重点回顾】
   - parseInt() 方法
-```
+```js
     var str ="4500元";
     var num = parseInt(str);
 ```
   - 正则
 
-```
+```js
     var s ="价格4500元";
     var num= s.replace(/[^0-9]/ig,"");
 ```

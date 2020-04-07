@@ -1,6 +1,6 @@
 - 简单聊了一下项目
 
-```
+```js
 console.log('begin'); 
 setTimeout(() => {
     console.log('setTimeout 1'); 
@@ -19,7 +19,7 @@ console.log('end');
 ![](https://upload-images.jianshu.io/upload_images/1784460-0674d056fb974aaf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
-```
+```js
 var result = [];
 var a = 3;
 var total = 0;
@@ -40,7 +40,7 @@ result[2]();
 
 改变 var 为 let 还是 369，why
 
-```
+```js
 - 写代码使 sum 函数使得以下表达式的值正确
 - sum(1, 2, 3).sumOf(); //6
 - sum(2, 3)(2).sumOf(); //7
@@ -76,7 +76,7 @@ sum.prototype.sumOf = function () {
 
 
 
-```
+```js
 // 10000 => 10,000
 function to(num) {
   let numArr = Number(num).toString().split('').reverse()

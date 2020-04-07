@@ -33,7 +33,7 @@
 
 
 - 两道编程题
-```
+```js
 function gen () {
     // 生成一个 8*8 棋盘
     let arr = []
@@ -65,11 +65,10 @@ function gen () {
     }
 
     return false
-
 }
 ```
 
-```
+```javascript
 // arr 为 8*8
 // n 代表输入多少个
 function inputNum (arr, n) {
@@ -88,13 +87,11 @@ function inputNum (arr, n) {
             i--
         }
     }
-
     for (let i = 0; i < arr.length; i++) {
         for (let j = 0; j < arr[i].length; j++) {
 
         }
     }
-    
 }
 ```
 
@@ -102,4 +99,3 @@ function inputNum (arr, n) {
 [https://www.w3ctech.com/topic/1786](https://www.w3ctech.com/topic/1786)
 
 
-第一面试腾讯这么大的公司，结果很惨，心里确实也挺难受的。

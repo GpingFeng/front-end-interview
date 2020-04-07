@@ -1,14 +1,14 @@
 
-Vue-router 原理
-- hash
-- html5
+- Vue-router 原理
+  - hash
+  - html5
 
 怎么去捕获 await、async 中的错误
 - try...catch
 
 常见的异步方案，以及 Promise 的一道题
 答案是2，自己回答了 1和2
-```
+```js
 new Promise(function(resolve,reject){
     resolve(Promise.reject())
 }).then(function () {
@@ -87,7 +87,7 @@ HTTP 请求怎么缓存
 
 以下是我的实现
 
-```
+```js
 
 f1('abc', 123, {b:3});  // 10, 1000s
 f1('abc', 123, {b:3});  // 10, 1000s
@@ -127,7 +127,7 @@ f2('abc', 123, {b:3});  // 10, 1000s
 f2('abc', 888, {b:3});  // 10, 0s
 ```
 
-```
+```js
   const memorize = function(fn) {
     const cache = {}       // 存储缓存数据的对象
     return function(...args) {        // 这里用到数组的扩展运算符

@@ -21,7 +21,7 @@
 - Promise 【resolve完成之后】
 参考：[https://blog.csdn.net/funkstill/article/details/103521985](https://blog.csdn.net/funkstill/article/details/103521985)
 
-```
+```js
 new Promise((resolve,reject) => {
     console.log(1)
     resolve()
@@ -34,7 +34,7 @@ new Promise((resolve,reject) => {
 A1 = A2 = A3 = A4
 
 A1 = (A2 = (A3 = A4))
-```
+```js
 (function () {
     const a = b =1;
     // 这里我理解相当于
@@ -50,7 +50,7 @@ console.log(typeof b)  // number
 编程题【做得不是很好】
 对数据结构的处理，这是一篇解释的文章：[https://github.com/LeuisKen/leuisken.github.io/issues/2](https://github.com/LeuisKen/leuisken.github.io/issues/2)
 
-```
+```js
 var transObject = function(tableData, keys) {
   let hashTable = {}, res = []
   for (let i = 0; i < tableData.length; i++) {
@@ -92,7 +92,7 @@ var transObject = function(tableData, keys) {
 - 跨域【解释跨域、如何解决】
 
 看一道编程题【时间复杂度是多少？】
-```
+```js
 function my_print(n)
 {
     for (var i = 0; i < n; i++) {
