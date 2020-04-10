@@ -17,7 +17,6 @@ function quickSort(arr) {
   return [...quickSort(leftArr), point, ...quickSort(rightArr)]
 }
 
-
 // 测试
 let arrTest  = [1,4,2,6,2,3,6,2,3,7,3]
 let result = quickSort(arrTest)

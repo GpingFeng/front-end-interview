@@ -35,3 +35,22 @@ CSS 也是动态载入的
   - 我觉得应该是一个装饰器模式
   - 自己回答说文件名【真的不好】以及开关
 - 介绍下前台组件你做了哪些组件【容器 tab 的设计和书写】
+
+
+我们所做的优化：
+优化过程
+
+	Service Worker
+		启动耗时
+			在 PC 端 50 ms
+			在移动端 250 ms
+	Gzip -- BR  压缩 Brotli
+		https://segmentfault.com/a/1190000009374437
+		由后端处理，设置响应头，前端浏览器只要支持即可
+	JSONP 转 AJAX
+		window.onload 会受图片、脚本、链接以及子框（iframe）影响，但ajax 不会
+	图片优化
+		质量设置为 90
+		webp
+			仅IOS
+	LAZY LOAD
