@@ -9,7 +9,7 @@
 
 **欢迎大家关注我的公众号，一起交流成长**
 
-![欢迎大家关注我的前端大杂货铺~](https://upload-images.jianshu.io/upload_images/1784460-74543a4049c36356.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![欢迎大家关注我的前端杂货铺~](https://upload-images.jianshu.io/upload_images/1784460-74543a4049c36356.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ## 参考
 [前端笔试面试简答题汇总](https://huruji.github.io/FE-Interview/#/)

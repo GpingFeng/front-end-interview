@@ -1,12 +1,15 @@
 - [简介](/?id=简介)
 
-  
-- JavaScript
-  - [闭包](closure)
-  - [继承](inherit)
-  - [函数节流和防抖](throttle)
+- 前端杂货铺
+  - [前端面试知识点汇总](FE/index)
+  - [前端面试题汇总](question/index)
 
-- LeetCode 刷题笔记
+- JavaScript 详解
+  - [闭包](js/closure)
+  - [继承](js/inherit)
+  - [函数节流和防抖](js/throttle)
+
+- 算法和数据结构
     - [三数之和](leetcode/threeSum)
 
 - 面试经验
