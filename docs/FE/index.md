@@ -12,8 +12,6 @@
 	- number
 	- string
 	- symbol
-
-		- 参考：http://es6.ruanyifeng.com/#docs/symbol
 		- 表示独一无二的值
 
 			- 通过 Symbol 函数生成
@@ -38,15 +36,16 @@
 		- Symbol.hasInstance
 
 			- 指向一个内部方法。当其他对象使用 instanceof 运算符，判断是否为该对象的实例的时候，会调用这个方法
-			- 比如，foo instanceof Foo在语言内部，实际调用的是Foo[Symbol.hasInstance](foo)
-			- class MyClass {
+			- 比如，foo instanceof Foo在语言内部，实际调用的是Foo[Symbol.hasInstance]\(foo\)，有点类似劫持了 instanceof 方法
+
+```js
+class MyClass {
   [Symbol.hasInstance](foo) {
     return foo instanceof Array;
   }
 }
-
 [1, 2, 3] instanceof new MyClass() // true
-			- 有点类似劫持了 instanceof 方法
+```
 
 - 原始类型没有任何的函数方法可以调用
 - number
@@ -60,6 +59,9 @@
 
 	- 存在变量提升
 	- 语义性更强
+
+参考：
+- http://es6.ruanyifeng.com/#docs/symbol
 
 ### typeof null 输出 object
 

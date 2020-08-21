@@ -1,66 +1,60 @@
 
-前端基础
+## 前言
 
-框架解读
+之前写了一篇关于前端模拟面试的文章——[前端模拟面试【一面】](https://mp.weixin.qq.com/s/sWoACpZqWmTs88-RHG29ZQ) 今天咱们接着进行前端模拟面试二面。因为有很多是一面中提及了的问题，这边不再写相关答案，会简单过一下。
 
-工程化
+> 一面之后，最好有个时间复习一下一面中答得不好的知识点。二面也可以挑一些答得不好的进行提问，看是否真正掌握
 
-性能优化
-
-计算机基础
-
-typeScript
+> 面试始终是面试，我希望通过这些面试题，能够检验平时工作学习的成果，能够真正提高大家的前端基础能力和实战能力，而不是纸上谈兵
 
 ## html
 
-1\. 有哪些常用的<meta>标签
+1\. 有哪些常用的 <meta> 标签
 
 meta 标签由 name 和 content 属性来定义，来描述一个 HTML 文件的原信息，比如作者等
 
 （1）charset,html文档的编码形式
 
-```
-
+```html
  <meta charset="UTF-8" >
-
 ```
 
 （2）http-equiv,设置http缓存过期日期
 
-```
-
+```html
 ＜meta http-equiv="expires" content="Wed, 20 Jun 2019 22:33:00 GMT"＞
-
 ```
 
 （3）vieport，移动端控制视口的大小和比例。
 
-```
-
-name="viewport"
-
-content="width=device-width,initial-scale=1.0,maxmum-scale=1.0,minimum-scale=1.0,user-scalable=no"
-
+```html
+＜meta name="viewport" content="width=device-width,initial-scale=1.0,maxmum-scale=1.0,minimum-scale=1.0,user-scalable=no">
 ```
 
 ## CSS
 
 1\. 有哪些居中的方法
 
-```
+```css
+/* line-height 和 height */
 line-height=height
  
+/* flex */
 justify-content: center  // 水平居中
-align-item:center;// 垂直居中
+align-item:center;  // 垂直居中
 
+/* posotion 百分比 */
 position: relative;
 position:absolute;
-transform: translateX(-50%, -50%)
+transform: translate(-50%, -50%)
 
+/* position 负值 */
 margin负值
 
+/* margin */
 水平居中 margin:0 auto;
 
+/* table 布局 */
 display: table;
 vertical-align: middle;
 ```
@@ -68,8 +62,35 @@ vertical-align: middle;
 
 3\. 有没有使用过css的扩展语法，比如less，sass
 
-  - 嵌套
-  - 变量
+- Less、Sass/Scss是什么？
+
+Less 是一种动态样式语言. 对CSS赋予了动态语言的特性，如变量、继承、运算、函数。Sass  是一种动态样式语言，Sass语法属于缩排语法，比 css 比多出好些功能(如变量、嵌套、运算,混入(Mixin)、继承、颜色处理，函数等)，更容易阅读。
+
+- less和sass的相同之处
+  
+1、混入(Mixins)——class中的class；
+
+2、参数混入——可以传递参数的class，就像函数一样；
+
+3、嵌套规则——Class中嵌套class，从而减少重复的代码；
+
+4、运算——CSS中用上数学；
+
+5、颜色功能——可以编辑颜色；
+
+6、名字空间(namespace)——分组样式，从而可以被调用；
+
+7、作用域——局部修改样式；
+
+8、JavaScript 赋值——在CSS中使用
+JavaScript表达式赋值
+
+- less和sass的区别
+
+    Less和Sass的主要不同就是他们的实现方式。Less是基于JavaScript，是在客户端处理的。Sass是基于Ruby的，是在服务器端处理的。关于变量在Less和Sass中的唯一区别就是Less用@，Sass用 $。
+
+参考：[https://www.jianshu.com/p/029792f0c97d](https://www.jianshu.com/p/029792f0c97d "https://www.jianshu.com/p/029792f0c97d")
+
 
 
 4\. BFC（ 块级格式上下文）
@@ -78,7 +99,7 @@ vertical-align: middle;
 
 （2）特性：
 
- * box垂直方向上的距离由margin决定，属于同一个bfc的两个相邻的box的margin会重叠【内部的元素】
+ * box 垂直方向上的距离由 margin 决定，属于同一个 bfc 的两个相邻的 box 的 margin 会重叠【内部的元素】
 
  * bfc的区域不会与float box重叠【两列布局原理】
 
@@ -153,7 +174,7 @@ box-sizing： content-box 标准盒模型
 
 
 
-伪元素：：
+伪元素 ::
 
 伪元素可以创建一些文档语言无法创建的虚拟元素。
 - 比如：文档语言没有一种机制可以描述元素内容的第一个字母或第一行，但伪元素可以做到(::first-letter、::first-line)。
@@ -168,6 +189,18 @@ box-sizing： content-box 标准盒模型
 11\. 如何避免重排重绘
 
 12\. 如何实现即时通讯 websocket
+
+13\. link 和 @import
+
+- link除了加载 CSS 还有其他功能
+
+- @import 是在页面加载完之后加载，页面闪烁
+加载页面时，link标签引入的 CSS 被同时加载；@import引入的 CSS 将在页面加载完毕后被加载。
+
+- 兼容性 link 比 @import 好
+
+- DOM可控性区别
+可以通过 JS 操作 DOM ，插入link标签来改变样式；由于DOM方法是基于文档的，无法使用@import的方式插入样式。
 
 ## JS
 
@@ -201,13 +234,13 @@ box-sizing： content-box 标准盒模型
 
  * 搜索引擎检索程序无法解读这种页面，不利于seo
 
- * 会影响页面的并行加载：同一时间同一域名下的请求。一般情况下，iframe和所有页面在同一个域下面，而浏览器的并行加载的数量是有限的。
+ * iframe 和主页面共享连接池，而浏览器对相同的连接有限制，所以会影响页面的并行加载。
 
-解决： xxx.src="xxx.html"。讲iframe的src设置为主页面的html
+解决： xxx.src="xxx.html"。将iframe的src设置为主页面的html
 
 7\. 内存泄漏
 
-（1）定义： 当一块内存不再被应用程序使用的时候，由于某种原因，这块内存没有返还给操作系统。即存在不必要的引用只想一块本可以被释放的内存
+（1）定义： 当一块内存不再被应用程序使用的时候，由于某种原因，这块内存没有返还给操作系统
 
 （2）会导致的问题： 运行缓慢，崩溃，高延迟等。
 
@@ -219,23 +252,25 @@ box-sizing： content-box 标准盒模型
 
 指向window对象的this下绑定的变量
 
------解决：use strict. 使用严格模式，能避免创建意外的全局变量。
+解决：use strict. 使用严格模式，能避免创建意外的全局变量。
 
 * 被遗漏的定时器和回调函数
+
+解决：离开页面的时候及时清除，比如微信小程序页面假如设置了 setTimeout，那 onHide 的时候，要记得 clearTimeout
 
 * dom之外的引用：如果某时刻需要移除某元素，需要将它所有的引用清除比如事件绑定等。
 
 * 闭包：闭包是可以获取到父级作用域的匿名函数。
 
-8\. requestAnimation与settimeout，setInterval
+8\. requestAnimation 与 settimeout，setInterval
 
 注意： 动画若每秒达到60帧，用户就无法感知画面的间隔感。requestAnimation就是这个频率。除此之外，还有下列优点
 
 （1）会把每一帧的所有dom集中起来，在一次重绘或重排中就完成。
 
-（2）在隐藏或不可见的元素中，req...将不会进行重排重绘，意味着减少cpu,gpu和内存使用量
+（2）在隐藏或不可见的元素中，rrequestAnimation 将不会进行重排重绘，意味着减少cpu,gpu和内存使用量
 
-（3）req...优于set...的地方在于它是浏览器专门为动画提供的api，在运行的浏览器会自动化方法的调用，并且如果页面不是激活状态，动画会自动停止，有效节省了cpu的开销。
+（3）requestAnimation 优于 setTimeout 的地方在于它是浏览器专门为动画提供的api，在运行的浏览器会自动化方法的调用，并且如果页面不是激活状态，动画会自动停止，有效节省了cpu的开销。
 
 9\. get请求和post请求的区别
 
@@ -374,15 +409,17 @@ content-type是指http/https发送信息至服务器的内容编码类型。服�
 
 12\. 原型链
 
-利用原型让一个引用类型继承另一个引用类型的属性和方法。让原型对象等于另一个类型的实例，此时的原型对象将包含一个指向另一个原型的指针，相应的，另一个原型中也包含着指向另一个构造函数的指针。假如另一个原型又是另一个类型的指针，上述关系依然成立，如此层层递进，就构成了实例与原型的链条。
 
 13\. 微和宏任务分别包括哪些
 
 14\. 正则
 
+15\. fetch 和 ajax 的区别
+[https://juejin.im/entry/599cfac56fb9a0249b4841b8](https://juejin.im/entry/599cfac56fb9a0249b4841b8 "https://juejin.im/entry/599cfac56fb9a0249b4841b8")
+
 ## es6
 
-1\. es6中新增的数据类型symbol,set,map
+1\. es6中新增的数据类型 symbol
 
 ## 综合
 
@@ -398,7 +435,7 @@ content-type是指http/https发送信息至服务器的内容编码类型。服�
 
 3\. 了解w3c标准吗，说说
 
-[https://75.team/post/first-impression-of-w3c.html](https://75.team/post/first-impression-of-w3c.html)
+[https://75.team/post/first-impression-of-w3c.html](https://75.team/post/first-impression-of-w3c.html "https://75.team/post/first-impression-of-w3c.html")
 
 
 ## 框架
@@ -415,15 +452,20 @@ content-type是指http/https发送信息至服务器的内容编码类型。服�
 
 ## 小程序
 
-1\. 小程序生命周期  [https://www.cnblogs.com/lilicat/p/10456481.html](https://www.cnblogs.com/lilicat/p/10456481.html)
+1\. 小程序生命周期  
 
 应用，页面，组件
 
 应用：【onLaunch】【onShow】【onHide】
+
 用户首次打开小程序，触发 onLaunch 方法（全局只触发一次）。
+
 小程序初始化完成后，触发 onShow 方法，监听小程序显示。
+
 小程序从前台进入后台，触发 onHide 方法。
+
 小程序从后台进入前台显示，触发 onShow 方法。
+
 小程序后台运行一定时间，或系统资源占用过高，会被销毁。
 
 页面：【onLoad】【onShow】【onReady】【onHide】【onUnload】
@@ -435,6 +477,9 @@ content-type是指http/https发送信息至服务器的内容编码类型。服�
 - 【ready】 组件布局完成，这时可以获取节点信息，也可以操作节点
 - 【moved】 组件实例被移动到树的另一个位置
 - 【detached】 组件实例从节点树中移
+
+参考：[https://www.cnblogs.com/lilicat/p/10456481.html](https://www.cnblogs.com/lilicat/p/10456481.html "https://www.cnblogs.com/lilicat/p/10456481.html")
+
 
 ## 打包工具
 
@@ -457,7 +502,7 @@ webpack的构建流程
 
 ## 网络
 
-
+- TCP 三次和四次握手
 
 ## git
 
@@ -484,21 +529,11 @@ webpack的构建流程
 
 5\.  你有什么想问的吗
 
-## 其他
-- link 和 @import
-1.link除了加载 CSS 还有其他功能
 
-2.@import 是在页面加载完之后加载，页面闪烁
-加载页面时，link标签引入的 CSS 被同时加载；@import引入的 CSS 将在页面加载完毕后被加载。
+## 结束语
+模拟面试结束了，虽然是模拟的面试，但自己能够及时在真正面试前认识到很多自己的不足，并及时复习，我觉得也是一件很棒的事情。
 
-3.兼容性 link 比 @import 好
+但愿能够给大家带来一点启发，也欢迎大家关注我的公众号，期待和大家一起交流成长
 
-4.DOM可控性区别
-可以通过 JS 操作 DOM ，插入link标签来改变样式；由于DOM方法是基于文档的，无法使用@import的方式插入样式。
+![](https://upload-images.jianshu.io/upload_images/1784460-483083f0a9fd3c2d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-- TCP 三次和四次握手
-- 小程序登录流程
-- fetch 和 ajax
-[https://juejin.im/entry/599cfac56fb9a0249b4841b8](https://juejin.im/entry/599cfac56fb9a0249b4841b8)
-
-- 快排
